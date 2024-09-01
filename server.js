@@ -9,11 +9,11 @@ app.post('/usuarios', (request, response) => {
     
     users.push(request.body)
 
-    response.send('Ok, Post deu certo!!')
+    response.status(201).json(request.body)
 })
 
 app.get('/usuarios', (request, response) => {
-    response.json(users)
+    response.status(200).json(users)
 })
 
 app.listen(3000)
